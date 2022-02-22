@@ -39,7 +39,8 @@ export const useRules = () => {
    */
   const getDefaultRelationshipType = (a: ProvenanceNode, b: ProvenanceNode) => {
     const rulesThatApply = rules.value.filter((rule) => {
-      return rule.source === a.definitionId && rule.target === b.definitionId;
+      return (rule.source === 'Other' || rule.source === a.definitionId)
+      && (rule.target === 'Other' || rule.target === b.definitionId);
     });
     if (rulesThatApply.length === 0) {
       return undefined;
@@ -65,7 +66,8 @@ export const useRules = () => {
     }
 
     return rules.value.some((rule) => {
-      return rule.source === a.definitionId && rule.target === b.definitionId && rule.type.indexOf(type) !== -1;
+      return (rule.source === 'Other' || rule.source === a.definitionId)
+      && (rule.target === 'Other' || rule.target === b.definitionId) && rule.type.indexOf(type) !== -1;
     });
   };
 
@@ -104,7 +106,8 @@ export const useRules = () => {
     createRelationship,
     getApplicableRules: (a: ProvenanceNode, b: ProvenanceNode) => {
       return rules.value.filter((rule) => {
-        return rule.source === a.definitionId && rule.target === b.definitionId;
+        return (rule.source === 'Other' || rule.source === a.definitionId)
+        && (rule.target === 'Other' || rule.target === b.definitionId);
       });
     },
   };
