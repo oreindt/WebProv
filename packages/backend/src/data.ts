@@ -223,7 +223,7 @@ const adjustedData: NodeDefinition = {
 const buildingActivity: NodeDefinition = {
   id: 'Building Simulation Model',
   //label: 'BSM',
-  labelFormatString: 'BSM${version}',
+  labelFormatString: 'bsm${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
@@ -231,7 +231,7 @@ const buildingActivity: NodeDefinition = {
 const calibratingActivity: NodeDefinition = {
   id: 'Calibrating Simulation Model',
   //label: 'CSM',
-  labelFormatString: 'CSM${version}',
+  labelFormatString: 'csm${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
@@ -239,7 +239,7 @@ const calibratingActivity: NodeDefinition = {
 const validatingActivity: NodeDefinition = {
   id: 'Validating Simulation Model',
   //label: 'VSM',
-  labelFormatString: 'VSM${version}',
+  labelFormatString: 'vsm${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
@@ -247,7 +247,7 @@ const validatingActivity: NodeDefinition = {
 const analyzingActivity: NodeDefinition = {
   id: 'Analyzing Simulation Model',
   //label: 'ASM',
-  labelFormatString: 'ASM${version}',
+  labelFormatString: 'asm${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
@@ -256,28 +256,28 @@ const analyzingActivity: NodeDefinition = {
 
 const designingDataCollection: NodeDefinition = {
   id: 'Designing Data Collection',
-  labelFormatString: 'DDC${version}',
+  labelFormatString: 'ddc${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
 
 const designingFollowUpDataCollection: NodeDefinition = {
   id: 'Designing Follow-Up Data Collection',
-  labelFormatString: 'DFUDC${version}',
+  labelFormatString: 'dfudc${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
 
 const collectingPrimaryData : NodeDefinition = {
   id: 'Collecting Primary Data',
-  labelFormatString: 'CPD${version}',
+  labelFormatString: 'cpd${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
 
 const analyzingData: NodeDefinition = {
   id: 'Design Data Collection Procedure',
-  labelFormatString: 'AD${version}',
+  labelFormatString: 'ad${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
@@ -286,28 +286,28 @@ const analyzingData: NodeDefinition = {
 
 const creatingAssessmentFramework: NodeDefinition = {
   id: 'Creating Assessment Framework',
-  labelFormatString: 'CAF${version}',
+  labelFormatString: 'caf${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
 
 const refiningAssessmentFramework: NodeDefinition = {
   id: 'Refining Assessment Framework',
-  labelFormatString: 'RAF${version}',
+  labelFormatString: 'raf${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
 
 const assessingSecondaryData: NodeDefinition = {
   id: 'Assessing Secondary Data',
-  labelFormatString: 'ASD${version}',
+  labelFormatString: 'asd${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
 
 const adjustingSecondaryData: NodeDefinition = {
   id: 'Adjusting Secondary Data',
-  labelFormatString: 'ASD${version}',
+  labelFormatString: 'asd${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
