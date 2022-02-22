@@ -9,7 +9,10 @@ export {
   dependencyRelationships,
 } from './assets/web-provenance-export.json';
 
-// Definitions
+// ENTITIES
+
+// Modelling and Analysis
+
 const researchQuestion: NodeDefinition = {
   id: 'Research Question',
   classification: 'entity',
@@ -77,20 +80,6 @@ const simulationExperiment: NodeDefinition = {
   ],
 };
 
-const simulationVisualization: NodeDefinition = {
-  id: 'Simulation Visualization',
-  classification: 'entity',
-  //labelFormatString: "SV${version}${study ? ' (' + study.source  + ')' : ''}",
-  labelFormatString: 'SV${version}',
-  informationFields: [
-    'TRACE-Token',
-    'Reference',
-    'Specification (language)',
-    'Software',
-    'Description'
-  ],
-};
-
 const simulationData: NodeDefinition = {
   id: 'Simulation Data',
   classification: 'entity',
@@ -103,27 +92,133 @@ const simulationData: NodeDefinition = {
   showRelatedTo: true,
 };
 
-const wetlabData: NodeDefinition = {
-  id: 'Wet-lab Data',
+const data: NodeDefinition = {
+  id: 'Data',
   classification: 'entity',
-  //labelFormatString: "D${version}${study ? ' (' + study.source  + ')' : ''}",
-  labelFormatString: 'WD${version}',
+  labelFormatString: 'D${version}',
   informationFields: [
     'Reference',
     'Description'
   ],
 };
 
-const fieldData: NodeDefinition = {
-  id: 'Field Data',
+// Primary Data Collection
+
+const methodologyLiterature: NodeDefinition = {
+  id: 'Methodology Literature',
   classification: 'entity',
-  //labelFormatString: "D${version}${study ? ' (' + study.source  + ')' : ''}",
-  labelFormatString: 'FD${version}',
+  labelFormatString: 'ML${version}',
   informationFields: [
     'Reference',
     'Description'
   ],
 };
+
+const dataCollectionProcedure: NodeDefinition = {
+  id: 'Data Collection Procedure',
+  classification: 'entity',
+  labelFormatString: 'CP${version}',
+  informationFields: [
+    'Reference',
+    'Description'
+  ],
+};
+
+const participantInformation: NodeDefinition = {
+  id: 'Participant Information',
+  classification: 'entity',
+  labelFormatString: 'PI${version}',
+  informationFields: [
+    'Reference',
+    'Description'
+  ],
+};
+
+const preregistration: NodeDefinition = {
+  id: 'Preregistration',
+  classification: 'entity',
+  labelFormatString: 'PR${version}',
+  informationFields: [
+    'Reference',
+    'Description'
+  ],
+};
+
+const ethicalApproval: NodeDefinition = {
+  id: 'Ethical Approval',
+  classification: 'entity',
+  labelFormatString: 'E${version}',
+  informationFields: [
+    'Reference',
+    'Description'
+  ],
+};
+
+const primaryData: NodeDefinition = {
+  id: 'Primary Data',
+  classification: 'entity',
+  labelFormatString: 'E${version}',
+  informationFields: [
+    'Reference',
+    'Description'
+  ],
+};
+
+const findings: NodeDefinition = {
+  id: 'Findings',
+  classification: 'entity',
+  labelFormatString: 'F${version}',
+  informationFields: [
+    'Reference',
+    'Description'
+  ],
+};
+
+const analysisScripts: NodeDefinition = {
+  id: 'Analysis Scripts',
+  classification: 'entity',
+  labelFormatString: 'AS${version}',
+  informationFields: [
+    'Reference',
+    'Description'
+  ],
+};
+
+// Secondary Data Collection
+
+const assessmentFramework: NodeDefinition = {
+  id: 'Assessment Framework',
+  classification: 'entity',
+  labelFormatString: 'AF${version}',
+  informationFields: [
+    'Reference',
+    'Description'
+  ],
+};
+
+const metadata: NodeDefinition = {
+  id: 'Metadata',
+  classification: 'entity',
+  labelFormatString: 'MD${version}',
+  informationFields: [
+    'Reference',
+    'Description'
+  ],
+};
+
+const adjustedData: NodeDefinition = {
+  id: 'Adjusted Data',
+  classification: 'entity',
+  labelFormatString: 'AD${version}',
+  informationFields: [
+    'Reference',
+    'Description'
+  ],
+};
+
+// ACTIVITIES
+
+// Modelling and Analysis
 
 const buildingActivity: NodeDefinition = {
   id: 'Building Simulation Model',
@@ -157,10 +252,62 @@ const analyzingActivity: NodeDefinition = {
   informationFields: ['Description'],
 };
 
-const visualizingActivity: NodeDefinition = {
-  id: 'Visualizing Simulation Result',
-  //label: 'VSR',
-  labelFormatString: 'VSR${version}',
+// Primary Data Collection
+
+const designingDataCollection: NodeDefinition = {
+  id: 'Designing Data Collection',
+  labelFormatString: 'DDC${version}',
+  classification: 'activity',
+  informationFields: ['Description'],
+};
+
+const designingFollowUpDataCollection: NodeDefinition = {
+  id: 'Designing Follow-Up Data Collection',
+  labelFormatString: 'DFUDC${version}',
+  classification: 'activity',
+  informationFields: ['Description'],
+};
+
+const collectingPrimaryData : NodeDefinition = {
+  id: 'Collecting Primary Data',
+  labelFormatString: 'CPD${version}',
+  classification: 'activity',
+  informationFields: ['Description'],
+};
+
+const analyzingData: NodeDefinition = {
+  id: 'Design Data Collection Procedure',
+  labelFormatString: 'AD${version}',
+  classification: 'activity',
+  informationFields: ['Description'],
+};
+
+// Secondary Data Collection
+
+const creatingAssessmentFramework: NodeDefinition = {
+  id: 'Creating Assessment Framework',
+  labelFormatString: 'CAF${version}',
+  classification: 'activity',
+  informationFields: ['Description'],
+};
+
+const refiningAssessmentFramework: NodeDefinition = {
+  id: 'Refining Assessment Framework',
+  labelFormatString: 'RAF${version}',
+  classification: 'activity',
+  informationFields: ['Description'],
+};
+
+const assessingSecondaryData: NodeDefinition = {
+  id: 'Assessing Secondary Data',
+  labelFormatString: 'ASD${version}',
+  classification: 'activity',
+  informationFields: ['Description'],
+};
+
+const adjustingSecondaryData: NodeDefinition = {
+  id: 'Adjusting Secondary Data',
+  labelFormatString: 'ASD${version}',
   classification: 'activity',
   informationFields: ['Description'],
 };
@@ -223,13 +370,6 @@ export const rules: RelationshipRule[] = [
     target: calibratingActivity.id,
   },
   {
-    id: 'simulation-visualization-was-generated-by-visualizing-activity',
-    type: ['Generated by'],
-    cardinality: 'one-to-one',
-    source: simulationVisualization.id,
-    target: visualizingActivity.id,
-  },
-  {
     id: 'building-activity-used-research-question',
     type: ['Used'],
     cardinality: 'one-to-many',
@@ -279,13 +419,6 @@ export const rules: RelationshipRule[] = [
     target: simulationData.id,
   },
   {
-    id: 'building-activity-used-wet-lab-data',
-    type: ['Used'],
-    cardinality: 'one-to-many',
-    source: buildingActivity.id,
-    target: wetlabData.id,
-  },
-  {
     id: 'calibrating-activity-used-simulation-model',
     type: ['Used'],
     cardinality: 'one-to-many',
@@ -328,20 +461,6 @@ export const rules: RelationshipRule[] = [
     target: simulationData.id,
   },
   {
-    id: 'calibrating-activity-used-wet-lab-data',
-    type: ['Used'],
-    cardinality: 'one-to-many',
-    source: calibratingActivity.id,
-    target: wetlabData.id,
-  },
-  {
-    id: 'calibrating-activity-used-field-data',
-    type: ['Used'],
-    cardinality: 'one-to-many',
-    source: calibratingActivity.id,
-    target: fieldData.id,
-  },
-  {
     id: 'validating-activity-used-simulation-model',
     type: ['Used'],
     cardinality: 'one-to-many',
@@ -370,13 +489,6 @@ export const rules: RelationshipRule[] = [
     target: simulationData.id,
   },
   {
-    id: 'validating-activity-used-wet-lab-data',
-    type: ['Used'],
-    cardinality: 'one-to-many',
-    source: validatingActivity.id,
-    target: wetlabData.id,
-  },
-  {
     id: 'analyzing-activity-used-simulation-model',
     type: ['Used'],
     cardinality: 'one-to-many',
@@ -397,19 +509,217 @@ export const rules: RelationshipRule[] = [
     source: analyzingActivity.id,
     target: simulationData.id,
   },
+  // Primary Data Collection
   {
-    id: 'analyzing-activity-used-wet-lab-data',
+    id: 'ddc-used-rq',
     type: ['Used'],
     cardinality: 'one-to-many',
-    source: analyzingActivity.id,
-    target: wetlabData.id,
+    source: designingDataCollection.id,
+    target: researchQuestion.id,
   },
   {
-    id: 'visualizing-activity-used-simulation-data',
+    id: 'ddc-used-ml',
     type: ['Used'],
     cardinality: 'one-to-many',
-    source: visualizingActivity.id,
-    target: simulationData.id,
+    source: designingDataCollection.id,
+    target: methodologyLiterature.id,
+  },
+  {
+    id: 'cp-generated-by-ddc',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: dataCollectionProcedure.id,
+    target: designingDataCollection.id,
+  },
+  {
+    id: 'pr-generated-by-ddc',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: preregistration.id,
+    target: designingDataCollection.id,
+  },
+  {
+    id: 'e-generated-by-ddc',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: ethicalApproval.id,
+    target: designingDataCollection.id,
+  },
+  {
+    id: 'dfudc-used-f',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: designingFollowUpDataCollection.id,
+    target: findings.id,
+  },
+  {
+    id: 'dfudc-used-cp',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: designingFollowUpDataCollection.id,
+    target: dataCollectionProcedure.id,
+  },
+  {
+    id: 'dfudc-used-rq',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: designingFollowUpDataCollection.id,
+    target: researchQuestion.id,
+  },
+  {
+    id: 'dfudc-used-ml',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: designingFollowUpDataCollection.id,
+    target: methodologyLiterature.id,
+  },
+  {
+    id: 'pr-generated-by-dfudc',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: preregistration.id,
+    target: designingFollowUpDataCollection.id,
+  },
+  {
+    id: 'cp-generated-by-dfudc',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: dataCollectionProcedure.id,
+    target: designingFollowUpDataCollection.id,
+  },
+  {
+    id: 'e-generated-by-dfudc',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: ethicalApproval.id,
+    target: designingFollowUpDataCollection.id,
+  },
+  {
+    id: 'cpd-used-cp',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: collectingPrimaryData.id,
+    target: dataCollectionProcedure.id,
+  },
+  {
+    id: 'cpd-used-e',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: collectingPrimaryData.id,
+    target: ethicalApproval.id,
+  },
+  {
+    id: 'pd-generated-by-cpd',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: primaryData.id,
+    target: collectingPrimaryData.id,
+  },
+  {
+    id: 'pi-generated-by-cpd',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: participantInformation.id,
+    target: collectingPrimaryData.id,
+  },
+  {
+    id: 'ad-used-pr',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: analyzingData.id,
+    target: preregistration.id,
+  },
+  {
+    id: 'ad-used-pd',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: analyzingData.id,
+    target: primaryData.id,
+  },
+  {
+    id: 'as-generated-by-ad',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: analysisScripts.id,
+    target: analyzingData.id,
+  },
+  {
+    id: 'f-generated-by-ad',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: findings.id,
+    target: analyzingData.id,
+  },
+  // Secondary Data Collection
+  {
+    id: 'caf-used-rq',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: creatingAssessmentFramework.id,
+    target: researchQuestion.id,
+  },
+  {
+    id: 'af-generated-by-caf',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: assessmentFramework.id,
+    target: creatingAssessmentFramework.id,
+  },
+  {
+    id: 'raf-used-af',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: refiningAssessmentFramework.id,
+    target: assessmentFramework.id,
+  },
+  {
+    id: 'af-generated-by-raf',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: assessmentFramework.id,
+    target: refiningAssessmentFramework.id,
+  },
+  {
+    id: 'assd-used-af',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: assessingSecondaryData.id,
+    target: assessmentFramework.id,
+  },
+  {
+    id: 'assd-used-d',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: assessingSecondaryData.id,
+    target: data.id,
+  },
+  {
+    id: 'md-generated-by-assd',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: metadata.id,
+    target: assessingSecondaryData.id,
+  },
+  {
+    id: 'adjdsd-used-af',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: adjustingSecondaryData.id,
+    target: metadata.id,
+  },
+  {
+    id: 'adjsd-used-d',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: adjustingSecondaryData.id,
+    target: data.id,
+  },
+  {
+    id: 'md-generated-by-adjsd',
+    type: ['Generated by'],
+    cardinality: 'one-to-many',
+    source: adjustedData.id,
+    target: adjustingSecondaryData.id,
   },
 ];
 
@@ -420,13 +730,29 @@ export const definitions: NodeDefinition[] = [
   qualitativeModel,
   simulationModel,
   simulationExperiment,
-  simulationVisualization,
   simulationData,
-  wetlabData,
-  fieldData,
+  data,
   buildingActivity,
   calibratingActivity,
   validatingActivity,
   analyzingActivity,
-  visualizingActivity,
+  methodologyLiterature,
+  dataCollectionProcedure,
+  participantInformation,
+  preregistration,
+  ethicalApproval,
+  primaryData,
+  findings,
+  analysisScripts,
+  designingDataCollection,
+  designingFollowUpDataCollection,
+  collectingPrimaryData,
+  analyzingData,
+  assessmentFramework,
+  metadata,
+  adjustedData,
+  creatingAssessmentFramework,
+  refiningAssessmentFramework,
+  assessingSecondaryData,
+  adjustingSecondaryData
 ];
