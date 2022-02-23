@@ -164,7 +164,7 @@ const ethicalApproval: NodeDefinition = {
 const primaryData: NodeDefinition = {
   id: 'Primary Data',
   classification: 'entity',
-  labelFormatString: 'P${version}',
+  labelFormatString: 'PD${version}',
   informationFields: [
     'Reference',
     'Description'
