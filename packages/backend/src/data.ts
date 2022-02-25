@@ -568,6 +568,27 @@ export const rules: RelationshipRule[] = [
     source: simulationModel.id,
     target: composingSimulationModel.id,
   },
+  {
+    id: 'csm-used-o',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: calibratingActivity.id,
+    target: other.id,
+  },
+  {
+    id: 'asm-used-o',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: analyzingActivity.id,
+    target: other.id,
+  },
+  {
+    id: 'vsm-used-o',
+    type: ['Used'],
+    cardinality: 'one-to-many',
+    source: validatingActivity.id,
+    target: other.id,
+  },
   // Primary Data Collection
   {
     id: 'ddc-used-rq',
