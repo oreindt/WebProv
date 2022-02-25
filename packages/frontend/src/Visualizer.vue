@@ -47,7 +47,7 @@
         style="flex: 1; display: flex; align-items: center"
         class="space-x-0 lg:space-x-4 flex-col lg:flex-row"
       >
-        <query-card class="search overlay-child" @open="showNodes"></query-card>
+        <query-card class="query overlay-child" @open="showNodes"></query-card>
         <search-card
           class="search overlay-child"
           :items="searchItems"
@@ -1946,6 +1946,13 @@ export default createComponent({
 .search {
   // resize the cards to make room for pattern selection
   width: 350px;
+  // 40 px for margin/padding and 60px for the information button
+  max-height: calc(100vh - 100px);
+}
+
+.query {
+  // resize the cards to make room for pattern selection
+  width: 1050px;
   // 40 px for margin/padding and 60px for the information button
   max-height: calc(100vh - 100px);
 }
