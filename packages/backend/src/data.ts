@@ -38,8 +38,7 @@ const requirement: NodeDefinition = {
     'Type,None,Qualitative,Quantitative',
     'Specification (language)',
     'Description',
-  ],
-  showRelatedTo: true,
+  ]
 };
 
 const qualitativeModel: NodeDefinition = {
@@ -70,7 +69,7 @@ const simulationExperiment: NodeDefinition = {
   labelFormatString: 'SE${version}',
   informationFields: [
     'Reference',
-    'Category,Optimization,Sensitivity analysis,Perturbation,Parameter scan,Steady-state analysis,Time course analysis,Other',
+    'Category,Optimization,Sensitivity analysis,Perturbation,Parameter scan,Steady-state analysis,Time course analysis,Other,Uncertainty quantification',
     'Specification (language)',
     'Software',
     'Description'
@@ -85,8 +84,7 @@ const simulationData: NodeDefinition = {
   informationFields: [
     'Reference',
     'Status,Successful Validation,Successful Calibration',
-    'Description'],
-  showRelatedTo: true,
+    'Description']
 };
 
 const data: NodeDefinition = {
