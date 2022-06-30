@@ -88,7 +88,7 @@
         <div class="spacer"></div>
 
         <!-- Add provenance pattern (dropdown button) -->
-        <b-select name="AddPattern" v-if="showEditTools" @input="addPattern" expanded v-model="selectedPattern" class="clear-button overlay-child">
+        <!-- <b-select name="AddPattern" v-if="showEditTools" @input="addPattern" expanded v-model="selectedPattern" class="clear-button overlay-child">
           <option value="" disabled selected>Add Pattern</option>
           <option value="Creating Simulation Model">Creating Simulation Model</option>
           <option value="Refining Simulation Model">Refining Simulation Model</option>
@@ -98,7 +98,7 @@
           <option value="Validating Simulation Model">Validating Simulation Model</option>
           <option value="Analyzing Simulation Model">Analyzing Simulation Model</option>
           <option value="Visualizing Simulation Result">Visualizing Simulation Result</option>
-        </b-select>
+        </b-select>-->
       </div>
 
       <div class="cards overlay-child">
@@ -1817,23 +1817,7 @@ export default createComponent({
         <i>Relating simulation studies by provenance—Developing a family of Wnt signaling models</i>
         </a>.
 
-        <br>
-        <br>
-
-        This is an extension of the original version of WebProv, to support agent-based simulation
-        studies (in ecology) and to integrate provenance with
-        <a href="https://doi.org/10.1016/j.ecolmodel.2014.01.018">TRACE</a> documents.
-
-        <br>
-        <br>
-
-        You can browse the provenance information from the Baltic cod simulation study by Pierce
-        et al. You may also add your own provenance data and export the dataset as JSON.
-
-        <br>
-        <br>
-
-        <strong>Please be aware that the database will be reset every day at 6 a.m. UTC.</strong>
+        This is the extended version of WebProv for the paper <i>Simulation Studies of Social Systems - Telling the Story Based on Provenance</i>.
       `;
 
       context.root.$notification.open({
@@ -1952,7 +1936,7 @@ export default createComponent({
 
 .query {
   // resize the cards to make room for pattern selection
-  width: 1050px;
+  width: 900px;
   // 40 px for margin/padding and 60px for the information button
   max-height: calc(100vh - 100px);
 }
