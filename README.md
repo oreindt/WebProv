@@ -9,18 +9,12 @@ Heroku & Netlify Deployment
 
 # WebProv
 
-The goal of this project is the create a web platform (WebProv) to automatically visualize a provenance model. The data required to create these visualizations are stored in a graph database. The web platform also features an editor to allow users to manually create provenance models that can be stored within the database.
+WebProv is a web-based editor to record the provenance of simulation studies. 
+The software was originally developed by Jakob Smith and Kai Budde. Please see the [original project page](https://github.com/SFB-ELAINE/WebProv).
 
-[Link to Demo](https://webprov.netlify.app)
-
-<!---
-[Link to video tutorial](https://youtube.com/)
-> The backend sometimes take a while (> 2 minutes) to start as we are using the `Heroku` free servers which sleep after 30 minutes of inactivity.
---->
+This is an extended version of WebProv developed for the paper "Simulation Studies of Social Systems – Telling the Story Based on Provenance" by Oliver Reinhardt, Toby Prike, Martin Hinsch, Jakub Bijak, Adelinde M. Uhrmacher.
 
 ## Integrating Provenance Information into WebProv
-
-_(This section describes the usage of WebProv as used by Budde et al. (2021).)_
 
 Once all provenance information of a simulation study has been collected (or while doing so), this information can be included in WebProv. 
 First, a user needs to create a study, which requires a name (usually the last name of first author and year of publication) as well as a reference to the simulation study (e.g., a journal article). 
@@ -31,13 +25,7 @@ Besides creating provenance graphs and entering provenance information one can a
 
 More information is available when clickling on the "+" in the lower right corner and then on the "i" ("show help").
 
-## Integrating WebProv with TRACE and ODD
-
-coming soon...
-
-## Fisheries Example
-
-coming soon...
+Existing provenance data can be imported by clicking on the "+" and selecting "Import Graph from JSON".
 
 ## Environment Setup
 
@@ -126,46 +114,7 @@ Finally, the frontend is a [`Vue`](https://vuejs.org) application split across n
 - **components/D3.vue**: A wrapper around `d3` built for `Vue`. It manages all of the visualization & animation aspects of the application.
 - **Visualizer.vue**: The file where everything comes together. It's responsibilities include kicking off the initial requests to the backend, managing state and managing actions.
 
-## Deployment
-
-The frontend and backend are automatically deployed when `tags` are pushed to the repo using [GitHub Actions](https://github.com/features/actions). The following sections describe how to push a new `tag` since the CI handles the rest! If you want to learn more about the deployment process, you can check out the CI files in `.github/workflows/`.
-
-### 1. Set the new version
-
-Use the [npm-version](https://docs.npmjs.com/cli/version) command to bump the version in your `package.json`, make a commit with the new version number and a new tag (again with the same version number). Make sure to use the appropriate version type:
-
-```
-npm version patch
-
-# or this command
-npm version minor
-
-# or this command
-npm version major
-```
-
-### 2. Push your commits and tags
-
-Then, push the commits and tags:
-
-```
-git push
-git push --tags
-```
-
-That's it!
-
-## Contributing
-
-See the branching instruction and rules [here](https://guides.github.com/introduction/flow/). Basically, when working on a feature or bug, create a branch off master. When you want to merge your changes, just create a PR.
-
-If you want to install a package, avoid using `npm` as `npm` will remove symlinks during installation (if this happens, just bootstrap the project again). Instead, use the `lerna add` command. For example:
-
-```
-npx lerna add the-module-to-install --scope=the-package-to-add-the-module-to [--dev]
-```
-
-## Dependencies/Acknowledgements
+## Dependencies
 
 ### Frontend
 
@@ -204,3 +153,7 @@ npx lerna add the-module-to-install --scope=the-package-to-add-the-module-to [--
 - [typescript](https://www.npmjs.com/package/typescript) (Apache-2.0)
 - [fp-ts](https://www.npmjs.com/package/fp-ts) (MIT)
 - [io-ts](https://www.npmjs.com/package/io-ts) (MIT)
+
+## Acknowledgement
+
+WebProv was originally develloped by Jakob Smith and Kai Budde. Please see the [original project page](https://github.com/SFB-ELAINE/WebProv).
